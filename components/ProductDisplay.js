@@ -47,6 +47,11 @@ app.component('product-display', {
         <a :href="url">Made by Vue Mastery</a>
       </div>
     </div>
+    <review-list
+      v-if="reviews.length" 
+      :reviews="reviews"
+    />
+    <review-form @review-submitted="addReview"/>
   </div>
   `,
 
@@ -71,7 +76,7 @@ app.component('product-display', {
           quantity: 0,
         },
       ],
-
+      reviews: [],
     }
   },
 
@@ -82,6 +87,10 @@ app.component('product-display', {
 
     updateVariant(index) {
       this.selectedVariant = index;
+    },
+
+    addReview(review) {
+      this.reviews.push(review);
     }
   },
 
