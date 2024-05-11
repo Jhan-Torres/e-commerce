@@ -19,7 +19,6 @@ app.component('product-display', {
       </div>
       <div class="product-info">
         <h1>{{ title }}</h1>
-        <p>{{ description }}</p>
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
         <p>Shipping: {{ shipping }}</p>
@@ -44,7 +43,6 @@ app.component('product-display', {
         >
           Add to Cart
         </button>
-        <a :href="url">Made by Vue Mastery</a>
       </div>
     </div>
     <review-list
@@ -59,9 +57,7 @@ app.component('product-display', {
     return {
       product: 'Socks',
       brand: 'Vue Mastery',
-      description: 'When it´s cold',
       selectedVariant: 0,
-      url: 'https://www.vuemastery.com/',
       details: ["50% cotton", "30% wool", "20% polyester"],
       variants: [
         { 
